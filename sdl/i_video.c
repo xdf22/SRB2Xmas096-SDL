@@ -26,7 +26,7 @@ int VID_SetMode(int modenum)
 
 	vid.modenum = 1;
 	vid.width = 640;
-	vid.height = 480;
+	vid.height = 400;
 	vid.bpp = 1;
 	vid.rowbytes = vid.width; // not multiplying by vid.bpp because its always gonna be 1 
 	vid.recalc = 1;

@@ -390,7 +390,7 @@ void P_LoadSectors (int lump)
     memcpy (levelflats, foundflats, numlevelflats*sizeof(levelflat_t));
 
     // search for animated flats and set up
-    P_SetupLevelFlatAnims ();
+    //P_SetupLevelFlatAnims ();
 
 }
 
@@ -684,7 +684,7 @@ void P_GroupLines (void)
     }
 
     // build line tables for each sector
-    linebuffer = Z_Malloc (total*4, PU_LEVEL, 0);
+    linebuffer = memset(Z_Malloc(total * sizeof (*linebuffer), PU_LEVEL, NULL), 0, total * sizeof (*linebuffer));//Z_Malloc(total * 4, PU_LEVEL, NULL);
     sector = sectors;
     for (i=0 ; i<numsectors ; i++, sector++)
     {
@@ -879,7 +879,7 @@ boolean P_SetupLevel (int           episode,
     //faB: now part of level loading since in future each level may have
     //     its own anim texture sequences, switches etc.
     P_InitSwitchList ();
-    P_InitPicAnims ();
+    //P_InitPicAnims ();
     P_SetupLevelSky ();
 
     // note: most of this ordering is important

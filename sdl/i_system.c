@@ -157,6 +157,8 @@ void I_Error (char *error, ...)
 	vsnprintf(buffer, len + 1, error, args);
 	va_end(args);
 
+	printf("%s", buffer);
+
 	SDL_ShowSimpleMessageBox(SDL_MESSAGEBOX_ERROR, "SRB2 Error", buffer, NULL);
     I_Quit();
 }

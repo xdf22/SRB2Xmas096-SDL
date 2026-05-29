@@ -13,6 +13,10 @@
 #pragma interface
 #endif
 
+// should these be moved?
+#define INT16 int16_t
+#define INT32 int32_t
+
 
 // moved here for r_sky.c (texture_t is used)
 
@@ -26,12 +30,12 @@
 //
 typedef struct
 {
-    short       originx;
-    short       originy;
-    short       patch;
-    short       stepdir;
-    short       colormap;
-} mappatch_t;
+    INT16       originx;
+    INT16       originy;
+    INT16       patch;
+    INT16       stepdir;
+    INT16       colormap;
+} __attribute__((packed)) mappatch_t;
 
 
 //
@@ -42,13 +46,13 @@ typedef struct
 typedef struct
 {
     char                name[8];
-    boolean             masked;
-    short               width;
-    short               height;
-    void                **columndirectory;      // OBSOLETE
-    short               patchcount;
+    INT32             masked;
+    INT16               width;
+    INT16               height;
+    INT32                columndirectory;      // OBSOLETE
+    INT16               patchcount;
     mappatch_t  patches[1];
-} maptexture_t;
+} __attribute__((packed)) maptexture_t;
 
 
 // A single patch from a texture definition,

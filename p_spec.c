@@ -1576,9 +1576,9 @@ void P_SpawnSpecials (void)
             P_SpawnFireFlicker(sector);
             break;
 // start ice
-          case 689:
-            player->specialsector = 689;
-            break;
+          //case 689:
+          //  player->specialsector = 689;
+          //  break;
 // end ice
         }
     }
