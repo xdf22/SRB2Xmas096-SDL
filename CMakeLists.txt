@@ -1,6 +1,6 @@
 project(SRB2XMAS)
 
-cmake_minimum_required(VERSION 4.3)
+cmake_minimum_required(VERSION 3.17.2)
 
 if (EMSCRIPTEN)
     set(SDL2_MIXER_LIBRARIES "${CMAKE_SOURCE_DIR}/emlibs/libSDL2_mixer.a")

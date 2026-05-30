@@ -53,20 +53,9 @@ jobs:
 
       - name: Build
         run: |
-          mkdir build
-          cd build
+          emcmake cmake -B build -DCMAKE_C_FLAGS="-std=gnu17"
 
-          echo "Setting CC to $(which emcc)"
-          echo "Setting CXX to $(which emcc)"
-
-          emcmake cmake \
-            -DCMAKE_CXX_COMPILER=$(which emcc) \
-            -DCMAKE_C_COMPILER=$(which emcc) \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DCMAKE_INSTALL_PREFIX=build \
-            ..
-
-          emmake make -j$(nproc)
+          emmake make -C build -j
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5.0.0
@@ -77,5 +66,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         # Always test building, but only deploy if it's from the master or next branch
-        if: ${{ github.ref == 'refs/heads/master' || github.ref == 'refs/heads/next' }}
+        if: ${{ github.ref == 'refs/heads/main' }}
         uses: actions/deploy-pages@v5.0.0
