@@ -1626,7 +1626,7 @@ void  P_WaterSector(sector_t* sector) {
 }
 
 // Tails 05-24-2000 : Finds a ring sector
-void  P_RingSector() {
+void  P_RingSector(sector_t* sector) {
   int i;
   for(i = 0; i < numlines; i++) {
     if(lines[i].special == 197 && lines[i].tag)

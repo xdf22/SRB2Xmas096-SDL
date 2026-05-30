@@ -2,7 +2,9 @@ project(SRB2XMAS)
 
 cmake_minimum_required(VERSION 4.3)
 
-if (NOT EMSCRIPTEN)
+if (EMSCRIPTEN)
+    set(SDL2_MIXER_LIBRARIES "${CMAKE_SOURCE_DIR}/emlibs/libSDL2_mixer.a")
+else()
     find_package(SDL2 REQUIRED)
     find_package(SDL2_mixer REQUIRED)
 endif()
@@ -88,24 +90,8 @@ set(TOTAL_SOURCES
 
 add_executable(SRB2SDLXMAS ${TOTAL_SOURCES})
 target_compile_definitions(SRB2SDLXMAS PRIVATE LINUX)
-target_link_libraries(SRB2SDLXMAS PRIVATE SDL2::SDL2 SDL2_mixer::SDL2_mixer m)
+target_link_libraries(SRB2SDLXMAS PRIVATE ${SDL2_LIBRARIES} ${SDL2_MIXER_LIBRARIES} m)
 
 if (EMSCRIPTEN)
-	set_target_properties(SRB2SDLXMAS PROPERTIES OUTPUT_NAME "SRB2SDLXMAS" SUFFIX ".html")
-    target_link_options(SRB2SDLXMAS PRIVATE
-        --use-port=sdl2
-        --use-port=sdl2_mixer
-        -sEXPORTED_RUNTIME_METHODS=ccall,cwrap
-        -sEXPORTED_FUNCTIONS=_main,_P_AddWadFile
-        -sASYNCIFY
-        -sNO_EXIT_RUNTIME
-        -sALLOW_MEMORY_GROWTH=1
-        -sINITIAL_MEMORY=983040000
-        -sSTACK_SIZE=655360000
-        --preload-file=${PROJECT_SOURCE_DIR}/assets/installer@/
-        --use-preload-plugins
-        --use-preload-cache
-    )
-    target_compile_options(SRB2SDLXMAS PRIVATE --use-port=sdl2 --use-port=sdl2_mixer)
-    target_compile_definitions(SRB2SDLXMAS PRIVATE __EMSCRIPTEN__)
+	add_subdirectory(web)
 endif()

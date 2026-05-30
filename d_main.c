@@ -813,6 +813,7 @@ void IdentifyVersion (void)
 
 //Fab:25-04-98:unused now
 //    char*       doom2fwad;
+#ifndef EMSCRIPTEN
 
 #ifdef LINUX
     char *home;
@@ -985,6 +986,12 @@ void IdentifyVersion (void)
     }
 
     D_AddFile(legacywad);
+#else
+    // hacky workaround a buffer overflow
+    gamemode = commercial;
+    D_AddFile ("srb2xmas.wad");
+    D_AddFile ("xmassupp.wad");
+#endif
 }
 
 //
