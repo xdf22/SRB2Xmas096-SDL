@@ -67,7 +67,7 @@ CV_PossibleValue_t gamma_cons_t[]={{0,"MIN"},{4,"MAX"},{0,NULL}};
 CV_PossibleValue_t viewsize_cons_t[]={{3,"MIN"},{12,"MAX"},{0,NULL}};
 
 consvar_t cv_usegamma = {"gamma","0",CV_SAVE,gamma_cons_t};
-consvar_t cv_viewsize = {"viewsize","10",CV_SAVE,viewsize_cons_t};      //3-11
+consvar_t cv_viewsize = {"viewsize","11",CV_SAVE,viewsize_cons_t};      //3-11
 consvar_t cv_detaillevel = {"detaillevel","0",CV_SAVE,NULL}; // UNUSED
 
 

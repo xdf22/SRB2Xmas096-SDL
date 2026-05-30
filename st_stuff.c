@@ -1663,8 +1663,8 @@ else
 
            break;
 
-         case 'a': // draw ammo
-           //pic = sboammo[plyr->readyweapon]; idk bro
+         /*case 'a': // drawn't ammo
+           pic = sboammo[plyr->readyweapon]; bye bye ammo
            if (pic)
            {
                ST_drawOverlayNum(SCX(234),
@@ -1675,7 +1675,7 @@ else
                if (rendermode==render_soft)
                    V_DrawScalePic (SCX(236),SCY(198)-(pic->height*vid.dupy),0,pic);
            }
-           break;
+           break;*/
 
          case 'k': // draw keys
            c=1;
