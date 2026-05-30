@@ -88,7 +88,7 @@ set(TOTAL_SOURCES
 
 add_executable(SRB2SDLXMAS ${TOTAL_SOURCES})
 target_compile_definitions(SRB2SDLXMAS PRIVATE LINUX)
-target_link_libraries(SRB2SDLXMAS PRIVATE ${SDL2_LIBRARIES} ${SDL2_mixer_LIBRARIES} m)
+target_link_libraries(SRB2SDLXMAS PRIVATE SDL2::SDL2 SDL2_mixer::SDL2_mixer m)
 
 if (EMSCRIPTEN)
 	set_target_properties(SRB2SDLXMAS PROPERTIES OUTPUT_NAME "SRB2SDLXMAS" SUFFIX ".html")

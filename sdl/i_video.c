@@ -97,5 +97,5 @@ void VID_BlitLinearScreen (void *srcptr, void *destptr, int width,
 
 int VID_GetModeForSize( int w, int h) {return 1;}
 
-char *VID_GetModeName(int modenum) {return "idk bro";}
+char *VID_GetModeName(int modenum) {return "640x400";}
 int VID_NumModes(void) {return 1;}

@@ -80,16 +80,16 @@ void SendNameAndColor(void);
 void SendNameAndColor2(void);
 
 // these two are just meant to be saved to the config
-consvar_t cv_playername           = {"name"                ,"gi joe"   ,CV_SAVE | CV_CALL | CV_NOINIT,NULL,SendNameAndColor};
-consvar_t cv_playercolor          = {"color"               ,"0"        ,CV_SAVE | CV_CALL | CV_NOINIT,Color_cons_t,SendNameAndColor};
+consvar_t cv_playername           = {"name"                ,"Sonic"   ,CV_SAVE | CV_CALL | CV_NOINIT,NULL,SendNameAndColor};
+consvar_t cv_playercolor          = {"color"               ,"Light blue"        ,CV_SAVE | CV_CALL | CV_NOINIT,Color_cons_t,SendNameAndColor};
 // player's skin, saved for commodity, when using a favorite skins wad..
 consvar_t cv_skin                 = {"skin"                ,DEFAULTSKIN,CV_SAVE | CV_CALL | CV_NOINIT,NULL /*skin_cons_t*/,SendNameAndColor};
 consvar_t cv_weaponpref           = {"weaponpref"          ,"014576328",CV_SAVE | CV_CALL | CV_NOINIT,NULL,SendWeaponPref};
 consvar_t cv_autoaim              = {"autoaim"             ,"1"        ,CV_SAVE | CV_CALL | CV_NOINIT,CV_OnOff,SendWeaponPref};
 consvar_t cv_originalweaponswitch = {"originalweaponswitch","0"        ,CV_SAVE | CV_CALL | CV_NOINIT,CV_OnOff,SendWeaponPref};
 // secondary player for splitscreen mode
-consvar_t cv_playername2          = {"name2"               ,"big b"    ,CV_SAVE | CV_CALL | CV_NOINIT,NULL,SendNameAndColor2};
-consvar_t cv_playercolor2         = {"color2"              ,"1"        ,CV_SAVE | CV_CALL | CV_NOINIT,Color_cons_t,SendNameAndColor2};
+consvar_t cv_playername2          = {"name2"               ,"Tails"    ,CV_SAVE | CV_CALL | CV_NOINIT,NULL,SendNameAndColor2};
+consvar_t cv_playercolor2         = {"color2"              ,"Orange"        ,CV_SAVE | CV_CALL | CV_NOINIT,Color_cons_t,SendNameAndColor2};
 consvar_t cv_skin2                = {"skin2"               ,DEFAULTSKIN,CV_SAVE | CV_CALL | CV_NOINIT,NULL /*skin_cons_t*/,SendNameAndColor2};
 
 

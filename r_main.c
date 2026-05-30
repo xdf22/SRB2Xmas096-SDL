@@ -110,7 +110,7 @@ lighttable_t*           zlight[LIGHTLEVELS][MAXLIGHTZ];
 // bumped light from gun blasts
 int                     extralight;
 
-consvar_t cv_chasecam = {"chasecam","0",0,CV_OnOff};
+consvar_t cv_chasecam = {"chasecam","1",0,CV_OnOff};
 
 consvar_t cv_psprites = {"playersprites","1",0,CV_OnOff};
 consvar_t cv_perspcorr = {"perspectivecrunch","0",0,CV_OnOff};
@@ -1062,7 +1062,7 @@ void R_SetupFrame (player_t* player)
 
     if ( rendermode == render_soft ) 
     {
-        // clip it in the case we are looking a 3dfx 90° full aiming
+        // clip it in the case we are looking a 3dfx 90ï¿½ full aiming
         // (lmps, nework and use F12...)
         G_ClipAimingPitch(&aimingangle);
 
